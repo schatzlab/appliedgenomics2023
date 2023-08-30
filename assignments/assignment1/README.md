@@ -159,7 +159,7 @@ for (i = 1; i <= max_frequency; i++)
 - You may find [`samtools`](http://www.htslib.org/) and especially `samtools faidx` helpful for indexing the fasta files
 - Plotting can be done in any language; R or Python are recommended; Excel is okay but ugly :-P
 - We highly recommend you use [Jupyter notebooks](https://jupyter.org/) that you can then "print" to a PDF.
-- Be sure to clearly mark each question and subquestion
+- Be sure to clearly mark each question and subquestion in the PDF and then highlight each question in GenomeScope
 - If your laptop runs out of RAM for question 3, you can consider the first 1Mbp or 10Mbp of the genome. Just be sure to mark what part of the genome you considered
 
 
