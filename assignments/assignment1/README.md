@@ -149,7 +149,7 @@ for (i = 1; i <= max_frequency; i++)
 
 - Question 4.2. Comment on the output from the LLM - does it make logical sense, does it include any phrases you would not have written, do the citated papers exist and support the claims from the LLM?
 
-- Question 4.3 Post your final prompt to piazza
+- Question 4.3 Post your final prompt to piazza. Include the link to the post in your submission
 
 
 ### Hints
