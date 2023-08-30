@@ -138,7 +138,8 @@ for (i = 1; i <= max_frequency; i++)
 }
 ```
 
-- Question 3.3. Using the output from 3.2, plot the kmer frequency spectrum: x-axis is the kmer frequency, and the y-axis is the number of kmers that occur x times. Make sure to plot the y-axis in log space.
+- Question 3.3. Using the output from 3.2, plot the kmer frequency spectrum: x-axis is the kmer frequency, and the y-axis is the number of kmers that occur x times. Make
+  sure to plot both the x and y-axis in log space.
 
 - Question 3.4. What percent of the genome is unique, e.g. what percent of the kmers occur 1 time. What percent of the genome is repetitive (occurs more than 1 time). What percent occurs more than 1000 times. 
 
