@@ -60,7 +60,7 @@ maxcoverage = max(genomecoverage)
 ## use an array count how many positions have 0x coverage, have 1x coverage, have 2x coverage, ...
 histogram = initialize_array_with_zero(maxcoverage)
 
-for (x = 0; x < genome_coverage; x++)
+for (x = 0; x < genomelength; x++)
 {
   cov = genomecoverage[x]
   histogram[cov] = histogram[cov] + 1
