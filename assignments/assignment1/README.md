@@ -63,7 +63,7 @@ histogram = initialize_array_with_zero(maxcoverage)
 for (x = 0; x < genomelength; x++)
 {
   cov = genomecoverage[x]
-  histogram[x] = histogram[x] + 1
+  histogram[cov] = histogram[cov] + 1
 }
 
 ## now plot the histogram
