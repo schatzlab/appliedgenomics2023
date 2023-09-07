@@ -5,8 +5,7 @@ Due Date: Wednesday, September 13, 2023 @ 11:59pm <br>
 ### Assignment Overview
 
 In this assignment, you are given a set of unassembled reads from a mysterious pathogen that contains a secret message encoded someplace in the genome. The secret message will be recognizable as a novel insertion of sequence not found in the reference. Your task is to assess the quality of the reads, assemble the genome, identify, and decode the secret message. If all goes well the secret message should decode into a recognizable 
-english text, otherwise doublecheck your coordinates and try again. As a reminder, any questions about the assignment 
-should be posted to [Piazza](https://piazza.com/jhu/fall2023/600449600649).
+english text, otherwise double check your coordinates and try again. As a reminder, any questions about the assignment should be posted to [Piazza](https://piazza.com/jhu/fall2023/600449600649).
 
 For this assignment, we recommend you install and run the tools using [bioconda](https://www.nature.com/articles/s41592-018-0046-7). There are some tips below in the Resources section. Note on Mac, we highly recommend you install the x86_64 package even if you are using an M1 chip.
 
@@ -24,8 +23,7 @@ Note we have provided both paired-end and mate-pairs reads (see included README 
 
 #### Question 2. Kmer Analysis [20 pts]
 
-Use `Jellyfish` to count the 21-mers in the reads data. Make sure to use the "-C" flag to count cannonical kmers, 
-otherwise your analysis will not correctly account for the fact that your reads come from either strand of DNA.
+Use `Jellyfish` to count the 21-mers in the reads data. Make sure to use the "-C" flag to count cannonical kmers, otherwise your analysis will not correctly account for the fact that your reads come from either strand of DNA.
 
 - Question 2a. How many kmers occur exactly 50 times? [Hint: try `jellyfish histo`]
 - Question 2b. What are the top 10 most frequently occurring kmers [Hint: try `jellyfish dump` along with `sort` and `head`]
@@ -34,7 +32,9 @@ otherwise your analysis will not correctly account for the fact that your reads 
 
 #### Question 3. De novo assembly [20 pts]
 
-Assemble the reads using `Spades`. Spades will *not* run on Windows, you must use a linux/mac environment. 
+Assemble the reads using `Spades`. Spades will *not* run on Windows, you must use a linux/mac environment (The Ubuntu subsystem might work?). 
+
+Note: N50 size is the size such that half of the total amount of bases are in contigs this size or larger (a weighted median). For example, if you have contig sizes of 10kbp, 5kb, 3kbp, 1kbp, 1kbp, 1kbp. The total size is 21kbp. Half of this value is 10.5kbp, so the N50 size is 5kbp. To compute the N50 value, sort the contigs from largest to small, and then iterative through until their cummulative span reaches 50% of the total span.
 
 - Question 3a. How many contigs were produced? [Hint: try `grep -c '>' contigs.fasta`]
 - Question 3b. What is the total length of the contigs? [Hint: try `samtools faidx`, plus a short script/excel]
@@ -51,13 +51,12 @@ Assemble the reads using `Spades`. Spades will *not* run on Windows, you must us
 - Question 5a. What is the position of the insertion on the reference? [Hint: try `show-coords`]
 - Question 5b. How long is the novel insertion? [Hint: try `show-coords`]
 - Question 5c. What is the DNA sequence of the encoded message? [Hint: try `samtools faidx` to extract the insertion]
-- Question 5d. What is the secret message? [Hint: run `dna-decode.py -d --input message.fa` to decode the string from 5c]
+- Question 5d. What is the secret message? [Hint: run `dna-decode.py -d --input message.fa` to decode the string from 5c. If needed us the `--rev_comp` to reverse complement the sequence:]
 
 
 ### Packaging
 
-The solutions to the above questions should be submitted as a single PDF document that includes your name, email address, and 
-all relevant figures (as needed). Submit your solutions by uploading the PDF to [GradeScope](https://www.gradescope.com/courses/587880), and remember to select where in your submission each question/subquestion is. The Entry Code is: JK5VB4. 
+The solutions to the above questions should be submitted as a single PDF document that includes your name, email address, and all relevant figures (as needed). If you use ChatGPT for any of the code, also record the prompts used. Submit your solutions by uploading the PDF to [GradeScope](https://www.gradescope.com/courses/587880), and remember to select where in your submission each question/subquestion is. The Entry Code is: JK5VB4. 
 
 If you submit after this time, you will use your late days. Remember, you are only allowed 4 late days for the entire semester!
 
