@@ -77,7 +77,7 @@ $ chmod +x ./Mambaforge-MacOSX-x86_64.sh
 $ ./Mambaforge-MacOSX-x86_64.sh
 
 ## After mamba is installed add bioconda as a default channel
-$ mamba config --add channels bioconda
+$ conda config --add channels bioconda
 ```
 
 Once bioconda is configured, all of the tools needed for this assignment except spades can be installed using:
