@@ -7,7 +7,7 @@ Due Date: Wednesday, September 13, 2023 @ 11:59pm <br>
 In this assignment, you are given a set of unassembled reads from a mysterious pathogen that contains a secret message encoded someplace in the genome. The secret message will be recognizable as a novel insertion of sequence not found in the reference. Your task is to assess the quality of the reads, assemble the genome, identify, and decode the secret message. If all goes well the secret message should decode into a recognizable 
 english text, otherwise double check your coordinates and try again. As a reminder, any questions about the assignment should be posted to [Piazza](https://piazza.com/jhu/fall2023/600449600649).
 
-For this assignment, we recommend you install and run the tools using [bioconda](https://www.nature.com/articles/s41592-018-0046-7). There are some tips below in the Resources section. Note on Mac, we highly recommend you install the x86_64 package even if you are using an M1 chip.
+For this assignment, we recommend you install and run the tools using [bioconda](https://www.nature.com/articles/s41592-018-0046-7). There are some tips below in the Resources section. Note on Mac, you must install the x86_64 package even if you are using an M1 chip.
 
 
 #### Question 1. Coverage Analysis [20 pts]
@@ -69,7 +69,7 @@ If you submit after this time, you will use your late days. Remember, you are on
 
 On linux or mac I *highly* recommend that you use bioconda to install the packages rather than installing from source. 
 
-The easiest way to install conda is with [Miniconda](https://docs.conda.io/en/latest/miniconda.html). For M1 macs, I recommend using the x86 installation in emulation mode since  M1/arm support is still limited. I also recommend using [mamba](https://github.com/mamba-org/mamba) instead of the default `conda` command for installing new packages:
+The easiest way to install conda is with [Miniconda](https://docs.conda.io/en/latest/miniconda.html). For M1 macs, you must use the x86 installation in emulation mode since  M1/arm support is still limited. For this you will use the "Rosette 2" subsystem that will convert M1 arm instructions into x86_64 on the fly. Rosette will be automatically installed when you go to run it. I also recommend using [mamba](https://github.com/mamba-org/mamba) instead of the default `conda` command for installing new packages:
 
 ```
 ## Replace MacOS-x86_64 with the version you downloaded from https://github.com/conda-forge/miniforge#mambaforge
