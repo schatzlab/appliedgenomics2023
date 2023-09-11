@@ -3,7 +3,7 @@ Prof: [Michael Schatz](http://schatz-lab.org) (mschatz @ cs.jhu.edu) <br>
 TA: [Alex Sweeten](https://genomeinformatics.github.io/people/sweeten/) (asweete1 @ jhu.edu) <br>
 Class Hours: Monday + Wednesday @ 3:00p - 4:15p Hodson 311 <br>
 Schatz Office Hours: By appointment <br>
-Sweeten Office Hours: TBD and by appointment <br>
+Sweeten Office Hours: Monday from 4:30pm - 5:30pm (over zoom) and by appointment <br>
 
 **The primary goal of the course is for students to be grounded in theory and leave the course empowered to conduct independent genomic analyses.** 
 We will study the leading computational and quantitative approaches for comparing and analyzing genomes starting from raw sequencing data. The course will focus on human genomics and human medical applications, but the techniques will be broadly applicable across the tree of life. The topics will include genome assembly & comparative genomics, variant identification & analysis, gene expression & regulation, personal genome analysis, and cancer genomics. The grading will be based on assignments, a midterm exam, class presentations, and a significant class project. There are no formal course prerequisites, although the course will require familiarity with UNIX scripting and/or programming to complete the assignments and course project. 
