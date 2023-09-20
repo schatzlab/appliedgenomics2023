@@ -6,14 +6,14 @@ Due Date: Wednesday, September 27, 2023 @ 11:59pm <br>
 
 In this assignment you will explore WDLs as a workflow language to orchestrate a variety of read mapping tasks. You can execute your WDLs using [miniwdl](https://github.com/chanzuckerberg/miniwdl) after running `pip install miniwdl`. You may also find [learn-wdl](https://github.com/openwdl/learn-wdl) to be very helpful.
 
-If you are using a Mac, make sure to disable [gRPC FUSE for file sharing](https://github.com/chanzuckerberg/miniwdl/issues/145). There is a currently a very weird bug in Docker desktop 4.12.0 (docker engine 20.10.17) on Apple M1 where if you try to disable "Use gRPC FUSE for file sharing" via the GUI it will turn itself back on when you try to activate it. On M1 you will also need to set the DOCKER_HOST environment variable [Notes](https://github.com/chanzuckerberg/miniwdl/issues/652). Docker is aware of the problem and are working on a fix. In the meantime there is a workaround available: [https://github.com/docker/for-mac/issues/6467](https://github.com/docker/for-mac/issues/6467)
+Miniwdl works best on Linux or older (non-M1) macs. If you are using a Mac, make sure to disable [gRPC FUSE for file sharing](https://github.com/chanzuckerberg/miniwdl/issues/145). On M1 macs (and PCs) miniwdl wont run, but you can run miniwdl in the cloud via [https://github.com/schatzlab-teaching/wdl101](https://github.com/schatzlab-teaching/wdl101). Follow the instructions there to get started.
 
 The bioinformatics tools you will need for the assignment (bowtie, samtools, etc) are bundled into a [Docker](https://www.docker.com) container so you wont need to install other software packages. This will get you ready to run your code in the cloud for future assignments. Instructions for running the container are available here: [https://github.com/mschatz/wga-essentials](https://github.com/mschatz/wga-essentials). This is known to work on new macs (M1) and older macs (intel chip). It should also run on Linux and Windows but let us know if you have any issues.
 
 As a reminder, any questions about the assignment should be posted to [Piazza](https://piazza.com/jhu/fall2023/600449600649).
 
 ### Question 1. de Bruijn Graph construction [10 pts]
-- Q1a. Draw (by hand or by code) the de Bruijn graph for the following reads using k=3 (assume all reads are from the forward strand, no sequencing errors, complete coverage of the genome). You may find [graphviz](https://graphviz.org/) to be helpful (see below).
+- Q1a. Write a script to draw the de Bruijn graph for the following reads using k=3 (assume all reads are from the forward strand, no sequencing errors, complete coverage of the genome). You may find [graphviz](https://graphviz.org/) to be helpful (see below).
 
 ```
 ATTCA
@@ -39,7 +39,7 @@ TTGAT
 
 ### Question 2. Hello World [5 pts]
 
-- Using [miniwdl](https://github.com/chanzuckerberg/miniwdl), develop a Hello World workflow that takes in a user's name (`USER_NAME` in string format) and outputs a file saying `Hello, USER_NAME!`. Please submit your code as well as a screenshot of the window in which you run the code. **If you cannot successfully run miniwdl on your local computer, let us know as soon as possible so that we can provide an alternative.**
+- Using [miniwdl](https://github.com/chanzuckerberg/miniwdl), develop a Hello World workflow that takes in a user's name (`USER_NAME` in string format) and outputs a file saying `Hello, USER_NAME!`. Please submit your code as well as a screenshot of the window in which you run the code. **If you cannot successfully run miniwdl on your local computer or in the [cloud](https://github.com/schatzlab-teaching/wdl101), let us know as soon as possible so that we can provide an alternative.**
 
 
 #### Question 3. Mapping Analysis [10 pts]
@@ -58,7 +58,7 @@ The goal of this question is to develop a WDL that will align pairs of read file
  
 - Question 3c. Using the WDL from b, plot the insert size distribution (tag: IS) and the coverage distribution (tag: COV) for the paired end reads (frag180.X.fq). Please include the code for plotting (this part does not need to be in the WDL)
 
-- Question 3d. Using the WDL from b, plot the insert size distribution (tag: IS) and the coverage distribution (tag: COV) for the paired end reads (jump2k.X.fq). Please include the code for plotting (this part does not need to be in the WDL)
+- Question 3d. Using the WDL from b, plot the insert size distribution (tag: IS) and the coverage distribution (tag: COV) for the mate pair reads (jump2k.X.fq). Please include the code for plotting (this part does not need to be in the WDL)
 
 
 ### Question 4. Mappability Analysis [10 pts]
@@ -70,9 +70,6 @@ The goal of this question is to develop a WDL that will align pairs of read file
 - 4c. We consider 25-mers that are mapped back to their correct position in the genome with mapq >= 20 to be uniquely mappable. For each position in 20,000,000-25,000,000 on chromosome 22, count how many uniquely mappable k-mers are mapped to it. Make a histogram of the number of positions in chromosome 22 with a given number of uniquely mappable k-mers overlapping them. Use k = 25, and the 25-mers you generated in part a. [Hint: How many 25-mers can uniquely map to any one base in chromosome 22?]
 
 - 4d. Repeat the previous two questions for k = 50 and 100, and discuss (in a couple of sentences) the effect of k on how many k-mers are uniquely mappable and on how many uniquely mappable k-mers overlap each position in the genome.
-
-
-
 
 
 
