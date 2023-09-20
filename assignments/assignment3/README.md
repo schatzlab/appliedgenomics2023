@@ -13,7 +13,7 @@ The bioinformatics tools you will need for the assignment (bowtie, samtools, etc
 As a reminder, any questions about the assignment should be posted to [Piazza](https://piazza.com/jhu/fall2023/600449600649).
 
 ### Question 1. de Bruijn Graph construction [10 pts]
-- Q1a. Draw (by hand or by code) the de Bruijn graph for the following reads using k=3 (assume all reads are from the forward strand, no sequencing errors, complete coverage of the genome). You may find [graphviz](https://graphviz.org/) to be helpful (install with `mamba install graphviz`).
+- Q1a. Draw (by hand or by code) the de Bruijn graph for the following reads using k=3 (assume all reads are from the forward strand, no sequencing errors, complete coverage of the genome). You may find [graphviz](https://graphviz.org/) to be helpful (see below).
 
 ```
 ATTCA
@@ -87,7 +87,7 @@ If you submit after this time, you will use your late days. Remember, you are on
 
 ### Graphview Tips
 
-It is very easy to render a graph using graphviz. For example, these commands will render [graph.dot](graph.dot) using `neato`:
+It is very easy to render a graph using graphviz. Install with `mamba install graphviz`. For example, these commands will render [graph.dot](graph.dot) using `neato`:
 
 ```
 $ cat graph.dot
