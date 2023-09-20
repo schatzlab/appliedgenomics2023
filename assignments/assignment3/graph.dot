@@ -1,0 +1,11 @@
+digraph{
+
+    ATT -> TAC
+    TAC -> ACG
+    ACG -> CGA
+    CGA -> GAC
+    GAC -> ACG
+    ACG -> CGT
+    CGT -> GTA
+    GTA -> TAT
+}
