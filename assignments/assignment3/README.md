@@ -31,7 +31,7 @@ TTCTT
 TTGAT
 ```
 
-- Q1b. Assume that the maximum number of occurrences of any 3-mer in the actual genome is 4 using the k-mers from Q1a. Write one possible genome sequence
+- Q1b. Assume that the maximum number of occurrences of any 3-mer in the actual genome is 5 using the k-mers from Q1a. Write one possible genome sequence
 
 
 - Q1c. What would it take to fully resolve the genome? [In a few sentences]
