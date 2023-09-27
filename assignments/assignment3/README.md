@@ -31,7 +31,7 @@ TTCTT
 TTGAT
 ```
 
-- Q1b. Assume that the maximum number of occurrences of any 3-mer in the actual genome is 5 using the k-mers from Q1a. Write one possible genome sequence
+- Q1b. Assume that the maximum number of occurrences of any 3-mer in the actual genome is 4 using the k-mers from Q1a. Write one possible genome sequence. Note this genome sequence may include sequences that are not supported by the underlying reads (this is the well known read decoherency problem for genome assembly).
 
 
 - Q1c. What would it take to fully resolve the genome? [In a few sentences]
@@ -48,13 +48,15 @@ The goal of this question is to develop a WDL that will align pairs of read file
 
 - Question 3a. Write a WDL that indexes the reference genome provided (`ref.fa`): `bowtie2-build GENOME.fa GENOME`. Please submit your code as well as a screenshot of the window in which you run the code.
 
+Note that the build comamnd outputs multiple files that you will need to mark as output files. You can either copy them one by one, or bundle them up in a tarball or zipfile.
+
 - Question 3b. Write a WDL that aligns pairs of read files, sorts the alignments, and computes coverage statistics. Specifically it should run these steps
 
  1. `bowtie2 -x GENOME -1 PREFIX.1.fq -2 PREFIX.2.fq -S PREFIX.sam`
  2. `samtools sort PREFIX.sam -o PREFIX.bam`
  3. `samtools stats PREFIX.bam > PREFIX.stats`
 
- Please submit the code for this but you do not need to include screenshots.
+ Please submit the code for this but you do not need to include screenshots. Note that to run bowtie2, you will need all of the output files from the indexing step. You can either pass them in one by one, or you can bundle them all together as a tarball or zipfile as a "reference bundle".
  
 - Question 3c. Using the WDL from b, plot the insert size distribution (tag: IS) and the coverage distribution (tag: COV) for the paired end reads (frag180.X.fq). Please include the code for plotting (this part does not need to be in the WDL)
 
