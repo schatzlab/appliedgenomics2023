@@ -67,7 +67,30 @@ Note that the build comamnd outputs multiple files that you will need to mark as
 
 - 4a. Write a WDL to extract kmers of a specific length from a range of a given genome, and then align them back to a reference genome using bowtie2.  Please submit the code for this but you do not need to include screenshots.
 
-- 4b. Using your WDL with k = 25, extract every k-mer from positions 20,000,000 to 25,000,000 on GRCh38 chromosome 22, and align them back to chromosome 22 (the entire chromosome) using bowtie2. How many 25-mers are mapped back to the correct position (the place they were extracted from) with mapq >= 20? How many are mapped with mapq >= 20, but to an incorrect position? You can download chr22 from assignment 1 here: [https://schatz-lab.org/appliedgenomics2023/assignments/assignment1/chr22.fa.gz](https://schatz-lab.org/appliedgenomics2023/assignments/assignment1/chr22.fa.gz
+To extract the kmers, you will need to write your own script. You should label the kmer with the position in the genome so you can confirm it is mapped to the corrected position. For example, if the genome is:
+
+```
+>genome
+GATTACA
+```
+
+It should output
+
+```
+>1
+GAT
+>2
+ATT
+>3
+TTA
+>4
+TAC
+>5
+ACA
+```
+
+
+- 4b. Using your WDL with k = 25, extract every k-mer from positions 20,000,000 to 25,000,000 on GRCh38 chromosome 22, and align them back to chromosome 22 (the entire chromosome) using bowtie2. How many 25-mers are mapped back to the correct position (the place they were extracted from) with mapq >= 20? How many are mapped with mapq >= 20, but to an incorrect position? You can download chr22 from assignment 1 here: [https://schatz-lab.org/appliedgenomics2023/assignments/assignment1/chr22.fa.gz](https://schatz-lab.org/appliedgenomics2023/assignments/assignment1/chr22.fa.gz)
 
 - 4c. We consider 25-mers that are mapped back to their correct position in the genome with mapq >= 20 to be uniquely mappable. For each position in 20,000,000-25,000,000 on chromosome 22, count how many uniquely mappable k-mers are mapped to it. Make a histogram of the number of positions in chromosome 22 with a given number of uniquely mappable k-mers overlapping them. Use k = 25, and the 25-mers you generated in part a. [Hint: How many 25-mers can uniquely map to any one base in chromosome 22?]
 
