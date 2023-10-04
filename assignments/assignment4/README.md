@@ -72,17 +72,51 @@ String to decode:
 Hint: use your sourcecode from Q1 to debug Q2. Also start with simple strings like GATTACA or your own name.
 
 
-### Question 3. Randomers and modimizers [25 pts]
+### Question 3. Randomers, modimizers, minimizers, and minhash [50 pts]
 
-- 4a. Extract the 1Mbp sequence in chr22 from position 20,000,000 to 21,000,000 [Hint use `samtools faidx` with [https://schatz-lab.org/appliedgenomics2023/assignments/assignment1/chr22.fa.gz](https://schatz-lab.org/appliedgenomics2023/assignments/assignment1/chr22.fa.gz)]. From this sequence pick 1000 kmers (k=21) with uniform random probability (without replacement). Make sure to record their position (just record the left most position). Note there are 1M-21+1 possible kmers to pick from. Make a plot of the location of these selected kmers: x-axis = genomic position, y-axis = vertical line from (x,0) to (x,1)
+For these questions you will need to extract to segments of chr22 [Hint use `samtools faidx` with [https://schatz-lab.org/appliedgenomics2023/assignments/assignment1/chr22.fa.gz](https://schatz-lab.org/appliedgenomics2023/assignments/assignment1/chr22.fa.gz).
 
-- 4b. Compute the distances between the selected kmers: Sort the starting positions of the kmers selected in 4a, and then substract consecutive positions in the sorted list. Compute the mean and standard deviation of the distances between kmers. Plot a histogram of the distances (x-axis=distance, y-axis=density). 
+Recall the Jaccard coefficient between sets A and B is `|A intersect B| / |A union B|`. To compute the set union and set intersect, we recommend storing the kmers (modimizers, minhashes, minimizers) from A in a dictionary, and then scanning through the kmers in B to check whether they are already in the dictionary. As you process the kmers in A and B, just keep track of how many there are total and how many are shared between A and B.
 
-- 4c. Recall that a modimizer is a kmer such that `hash(kmer) % M == 0`. For this question you should use the default `hash()` function in your programming language. Scan the 1Mbp sequence from 4a, and output the modimizers and their postions using `M=1000`. How many modimizers are reported? Use the code from 4a and 4b to plot the locations of the modimizers and a histogram of the distance between them. What is the mean and standard deviation of the distance between the modimizers? How does the distribution in the space between modimizers compare to the randomized selections from 4a and 4b.
+- 3a. Extract the 1Mbp sequence in chr22 from position 20,000,000 to 21,000,000. Separately extract the 1Mbp sequence in chr22 from position 21,000,000 to 22,000,000 [Hint: just show the commands you ran]
 
-- 4d. Recall the Jaccard coefficient between sets A and B is `|A intersect B| / |A union B|` Extract the 1Mbp sequence in chr22 starting at position 21,000,000 to 22,000,000. Use the code from 4d to compute the modimizers using `M=1000`. Now compute the Jaccard coefficient between these sets. To compute the set union and set intersect, we recommend storing the modimizers (kmers) from A in a dictionary, and then scanning through the modimizers in B to check whether they are already in the dictionary.
+#### Randomers
 
-- 4e. Compute the Jaccard coefficient between chr22:20M-21M and chr22:21M-22M using modimizers using `M=100` and `M=10`. In a few sentences, reflect on how the values compare
+- 3b. From the chr22:20M-21M sequence, pick 1000 kmers (k=21) with uniform random probability (without replacement). Output both the position and the kmer starting at this position (just record the left most position). Note there are 1M-21+1=999,980 possible kmers to pick from. From the output file, make a plot of the locations of these selected kmers: x-axis = genomic position, y-axis = vertical line from (x,0) to (x,1)
+
+- 3c. Compute the distances between the selected kmers: Sort the starting positions of the kmers selected in 3b, and then substract consecutive positions in the sorted list. Compute the mean and standard deviation of the distances between kmers. Plot a histogram of the distances (x-axis=distance, y-axis=density). 
+
+#### Modimizers
+
+Recall that a `modimizer` is a kmer such that `hash(kmer) % M == 0`. For this question you should use the default `hash()` function in your programming language (see below). 
+
+- 3d. Scan the chr22:20M-21M sequence from 3b, and output the modimizers and their postions using `M=1000`. How many modimizers are reported? Use the code from 3c to plot a histogram of the distance between them and the mean & standard deviation between them. In a few sentences, reflect on how does the distribution in the space between modimizers compare to the randomized selections from 3c. [Hint you may want to use the code from 3b to inspect the positions]
+
+- 3e. Use the code from 3d to compute the modimizers using `M=1000` for chr22:21M-22M. Compute the Jaccard coefficient between the modimizers in chr22:20M-21M and chr22:21M-22M. 
+
+- 3f. Compute the Jaccard coefficient between chr22:20M-21M and chr22:21M-22M using modimizers using `M=100` and `M=10`. In a few sentences, reflect on how the values compare to `M=1000`
+
+#### Minhash
+
+Recall minhash is computed as the N smallest hash values computed from the kmers in the string. [Hint: compute the hash value of every kmer in the sequence, then sort those values to find smallest 1000 values for `N=1000`]
+
+- 3g. Compute the minhash values for chr22:20M-21M using N=1000 and output the position and kmer sequence at those positions. Using your code from 3c, plot the histogram of the distances between the selected elements, and compute their mean and standard devaiation. How does this distribution compare to the the spacing of modimizers or randomers?
+
+- 3h. Compute the Jaccard coefficient between chr22:20M-21M and chr22:21M-22M using minhash using `N=1000`, `N=100` and `N=10`. In a few sentences, reflect on how the values compare to each other
+
+#### Minimizers [Bonus 10pts]
+
+Recall `(w, k)-mimimizers` are the set of k-mers that have minimal value within each posible window of size `w` along a sequence. [Hint: use a nested for loop to consider every window, and then within each window, extract every possible kmer & sort]
+
+- 3i. Compute the (1000,21)-minimizer values for chr22:20M-21M and output the position and kmer sequence at those positions.  Using your code from 3c, plot the histogram of the distances between the selected elements, and compute their mean and standard devaiation. How does this distribution compare to the the spacing of modimizers or randomers or minhash?
+
+- 3j. Compute the Jaccard coefficient between chr22:20M-21M and chr22:21M-22M using (1000,21), (100,21), and (31,21) -minimizers. In a few sentences, reflect on how the values compare to each other
+
+
+#### Comparison
+
+- 3k. In a few sentences reflect on the properties of the different sketching approaches. Be sure to comment on the relative spacing of selected kmers, the Jaccard coefficients computed, and the relative ease/difficulty of implementing. [If you did not implement minimizers, you should still comment on randomers, modimizers, and minhash]
+
 
 
 ### Packaging
