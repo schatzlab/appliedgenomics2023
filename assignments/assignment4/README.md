@@ -1,10 +1,10 @@
-## Assignment 4: BWT and Modmers
+## Assignment 4: BWT and Modimizers
 Assignment Date: Wednesday, October 4, 2023 <br>
 Due Date: Wednesday, October 11, 2023 @ 11:59pm <br>
 
 ### Assignment Overview
 
-In this assignment you will implement the BWT and modmers. These exercises can be computed in any programming language, although we recommend python (or C++, Java, or Rust).
+In this assignment you will implement the BWT and modimizers. These exercises can be computed in any programming language, although we recommend python (or C++, Java, or Rust). R is generally inefficient at string processing unless you take great care.
 
 As a reminder, any questions about the assignment should be posted to [Piazza](https://piazza.com/jhu/fall2023/600449600649).
 
