@@ -88,7 +88,7 @@ Recall the Jaccard coefficient between sets A and B is `|A intersect B| / |A uni
 
 #### Modimizers
 
-Recall that a `modimizer` is a kmer such that `hash(kmer) % M == 0`. For this question you should use the default `hash()` function in your programming language (see below). 
+Recall that a `modimizer` is a kmer such that `hash(kmer) % M == 0`. For this question you should use the default `hash()` function in your programming language (see below). Use k = 21.
 
 - 3d. Scan the chr22:20M-21M sequence from 3b, and output the modimizers and their postions using `M=1000`. How many modimizers are reported? Use the code from 3c to plot a histogram of the distance between them and the mean & standard deviation between them. In a few sentences, reflect on how does the distribution in the space between modimizers compare to the randomized selections from 3c. [Hint you may want to use the code from 3b to inspect the positions]
 
@@ -98,7 +98,7 @@ Recall that a `modimizer` is a kmer such that `hash(kmer) % M == 0`. For this qu
 
 #### Minhash
 
-Recall minhash is computed as the N smallest hash values computed from the kmers in the string. [Hint: compute the hash value of every kmer in the sequence, then sort those values to find smallest 1000 values for `N=1000`]
+Recall minhash is computed as the N smallest hash values computed from the kmers in the string. [Hint: compute the hash value of every kmer in the sequence, then sort those values to find smallest 1000 values for `N=1000`]. Use k = 21
 
 - 3g. Compute the minhash values for chr22:20M-21M using N=1000 and output the position and kmer sequence at those positions. Using your code from 3c, plot the histogram of the distances between the selected elements, and compute their mean and standard devaiation. How does this distribution compare to the the spacing of modimizers or randomers?
 
@@ -106,7 +106,7 @@ Recall minhash is computed as the N smallest hash values computed from the kmers
 
 #### Minimizers [Bonus 10pts]
 
-Recall `(w, k)-mimimizers` are the set of k-mers that have minimal value within each posible window of size `w` along a sequence. [Hint: use a nested for loop to consider every window, and then within each window, extract every possible kmer & sort]
+Recall `(w, k)-mimimizers` are the set of k-mers that have minimal value within each posible window of size `w` along a sequence. [Hint: use a nested for loop to consider every window, and then within each window, extract every possible kmer & sort]. Use k = 21.
 
 - 3i. Compute the (1000,21)-minimizer values for chr22:20M-21M and output the position and kmer sequence at those positions.  Using your code from 3c, plot the histogram of the distances between the selected elements, and compute their mean and standard devaiation. How does this distribution compare to the the spacing of modimizers or randomers or minhash?
 
