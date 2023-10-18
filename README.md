@@ -35,6 +35,7 @@ We will study the leading computational and quantitative approaches for comparin
 - [Molecular Biology of the Cell (Alberts)](https://www.ncbi.nlm.nih.gov/books/NBK21054/)
 - [Biological Sequence Analysis (Durbin et al)](https://www.amazon.com/Biological-Sequence-Analysis-Probabilistic-Proteins/dp/0521629713)
 - [Modern Statistics for Modern Biology (Holmes & Huber)](https://www.huber.embl.de/msmb/index.html)
+- [WDL Workflows](https://jhudatascience.org/AnVIL_Book_WDL/index.html)
 
 
 ## Schedule
