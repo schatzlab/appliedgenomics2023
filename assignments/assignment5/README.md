@@ -26,13 +26,13 @@ Download the annotation of regulatory variants from here:<br>
 
 **NOTE** The variants are reported using version 37 of the reference genome, but the annotation is for version 38. Fortunately, you can 'lift-over' the variants to the coordinates on the new reference genome using several avaible tools. I recommmend the [UCSC liftover tool](https://genome.ucsc.edu/cgi-bin/hgLiftOver) that can do this in batch by converting the variants into BED format. Note, some variants may not successfully lift over, especially if they become repetitive and/or missing in the new reference, so please make a note of how many variants fail liftover.
 
-- 1a. How much of the genome is annotated as a gene?
+- 1a. How much of the genome is annotated as a gene? (as a percentage)
 
 - 1b. What is the sequence of the shortest gene on chromosome 22? [Hint: `bedtools getfasta`]
 
-- 1c. How much of the genome is an annotated regulatory sequence (any type)? [Hint `bedtools merge`]
+- 1c. How much of the genome is an annotated regulatory sequence (any type)? (as a percentage) [Hint `bedtools merge`]
 
-- 1d. How much of the genome is neither gene nor regulatory sequences? [Hint: `bedtools merge` + `bedtools subtract`]
+- 1d. How much of the genome is neither gene nor regulatory sequences? (as a percentage) [Hint: `bedtools merge` + `bedtools subtract`]
 
 - 1e. Using the [UCSC liftover tool](https://genome.ucsc.edu/cgi-bin/hgLiftOver), how many of the variants can be successfully lifted over to hg38?
 
