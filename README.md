@@ -36,6 +36,7 @@ We will study the leading computational and quantitative approaches for comparin
 - [Biological Sequence Analysis (Durbin et al)](https://www.amazon.com/Biological-Sequence-Analysis-Probabilistic-Proteins/dp/0521629713)
 - [Modern Statistics for Modern Biology (Holmes & Huber)](https://www.huber.embl.de/msmb/index.html)
 - [WDL Workflows](https://jhudatascience.org/AnVIL_Book_WDL/index.html)
+- [UCSC Genome Browswer](https://genome.ucsc.edu/training/education/)
 
 
 ## Schedule
