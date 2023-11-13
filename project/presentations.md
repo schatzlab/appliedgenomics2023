@@ -13,13 +13,13 @@ Presentations will be a total of 15 minutes: 12 minutes for the presentation, fo
 | 3    | Mon | 27-Nov | never meta genome we didn't like | Novel Deep Learning Approach to Metagenomic Taxonomic Classification                                                                          | Matthew Nguyen, Mahler Revsine                  |
 | 4    | Mon | 27-Nov | Team Karani                        | Deep Learning for ethnicity prediction                                                                                                        | Trisha Karani                                   |
 | 5    | Mon | 27-Nov | Angela's Aging Microbiota        | Taxonomic identification of metagenomic samples by targeting identification of single copy genes.                                             | Angela Xu                                       |
-|
+| | | | | | |
 | 1    | Wed | 29-Nov | BWT Burrowing Company              | Adapting BWT Tunneling for Long Term Sequence Storage                                                                                         | Nathaniel Brown                                 |
 | 2    | Wed | 29-Nov | Team Cnidarians                    | Phylogenetic & Syntenic Analysis of Genes Involved with Cnidarian-Algal Symbiosis                                                             | Victoria Brown                                  |
 | 3    | Wed | 29-Nov | The Ocular Genomics Consortium     | Investigating the Genetic Basis for Dry Eye Disease                                                                                           | Felipe Barandiaran                              |
 | 4    | Wed | 29-Nov | scOracle (Single-Cell Oracle)      | Exploring strategies to improve the generalizability of predictors for cellular responses to chemical perturbations at single-cell resolution | Hyun Joo Ji, Smriti Srikanth, Tad Bekery        |
 | 5    | Wed | 29-Nov | Find the Function                  | Observing and Understanding for Cells Progress from One State to Another                                                                      | Sparsh Shah                                     |
-|
+| | | | | | |
 | 1    | Mon | 4-Dec  | Motif Miners                       | Machine Learning-Driven Identification and Clustering of Motif Patterns in Non-Small Cell Lung Cancer (NSCLC)                                 | Shivani Kushwaha, Ziyi Wang, Ashwin Rajendran   |
 | 2    | Mon | 4-Dec  | scMCLearn                          | Clustering single-cell data with cross-modality contrastive learning                                                                          | Shiyu Jiang, Chunyang Dai, Kevin He             |
 | 3    | Mon | 4-Dec  | Pathfinder                         | Creating a tool for predicting gene expression pathways from time-course RNA-seq                                                              | Oriel Savir, Varen Talwar                       |
