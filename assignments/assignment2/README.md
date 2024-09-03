@@ -88,7 +88,7 @@ $ mamba install samtools bowtie bwa mummer4 jellyfish fastqc fastx_toolkit
 ```
 
 For spades, download the precompiled version from here (installing with conda is tricky because there are conflicts in the dependencies):
-[https://cab.spbu.ru/files/release3.15.4/manual.html#sec2](https://cab.spbu.ru/files/release3.15.4/manual.html#sec2)
+[[https://cab.spbu.ru/files/release3.15.4/manual.html#sec2]](https://github.com/ablab/spades/releases/tag/v4.0.0)
 
 
 #### [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) - Raw read quality assessment
