@@ -51,7 +51,7 @@ Note: N50 size is the size such that half of the total amount of bases are in co
 - Question 5a. What is the position of the insertion on the reference? [Hint: try `show-coords`]
 - Question 5b. How long is the novel insertion? [Hint: try `show-coords`]
 - Question 5c. What is the DNA sequence of the encoded message? [Hint: try `samtools faidx` to extract the insertion]
-- Question 5d. What is the secret message? [Hint: run `dna-decode.py -d --input message.fa` to decode the string from 5c. If needed us the `--rev_comp` to reverse complement the sequence:]
+- Question 5d. What is the secret message? [Hint: run `dna-decode.py -d --input message.fa` to decode the string from 5c. If needed use the `--rev_comp` to reverse complement the sequence:]
 
 
 ### Packaging
