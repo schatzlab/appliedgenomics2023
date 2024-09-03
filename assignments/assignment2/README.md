@@ -77,9 +77,9 @@ $ chmod +x ./Mambaforge-MacOSX-x86_64.sh
 $ ./Mambaforge-MacOSX-x86_64.sh
 
 ## After mamba is installed add bioconda as a default channel
-$ conda config --add channels bioconda
-$ conda config --add channels defaults
 $ conda config --add channels conda-forge
+$ conda config --add channels defaults
+$ conda config --add channels bioconda
 $ conda config --set channel_priority strict
 ```
 
