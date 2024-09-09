@@ -27,7 +27,7 @@ Use `Jellyfish` to count the 21-mers in the reads data. Make sure to use the "-C
 
 - Question 2a. How many kmers occur exactly 50 times? [Hint: try `jellyfish histo`]
 - Question 2b. What are the top 10 most frequently occurring kmers [Hint: try `jellyfish dump` along with `sort` and `head`]
-- Question 2c. What is the estimated genome size based on the kmer frequencies? [Hint: upload the jellyfish histogram to [GenomeScope2](http://qb.cshl.edu/genomescope/genomescope2.0/) and report the min "Genome Haploid Length" in the "Results" section]
+- Question 2c. What is the estimated genome size based on the kmer frequencies? [Hint: upload the jellyfish histogram to [GenomeScope2](http://genomescope.org/genomescope2.0/) and report the min "Genome Haploid Length" in the "Results" section]
 - Question 2d. How well does the GenomeScope genome size estimate compare to the reference genome? [Hint: In a sentence or two]
 
 #### Question 3. De novo assembly [20 pts]
@@ -51,7 +51,7 @@ Note: N50 size is the size such that half of the total amount of bases are in co
 - Question 5a. What is the position of the insertion on the reference? [Hint: try `show-coords`]
 - Question 5b. How long is the novel insertion? [Hint: try `show-coords`]
 - Question 5c. What is the DNA sequence of the encoded message? [Hint: try `samtools faidx` to extract the insertion]
-- Question 5d. What is the secret message? [Hint: run `dna-decode.py -d --input message.fa` to decode the string from 5c. If needed us the `--rev_comp` to reverse complement the sequence:]
+- Question 5d. What is the secret message? [Hint: run `dna-decode.py -d --input message.fa` to decode the string from 5c. If needed use the `--rev_comp` to reverse complement the sequence:]
 
 
 ### Packaging
@@ -77,7 +77,10 @@ $ chmod +x ./Mambaforge-MacOSX-x86_64.sh
 $ ./Mambaforge-MacOSX-x86_64.sh
 
 ## After mamba is installed add bioconda as a default channel
+$ conda config --add channels conda-forge
+$ conda config --add channels defaults
 $ conda config --add channels bioconda
+$ conda config --set channel_priority strict
 ```
 
 Once bioconda is configured, all of the tools needed for this assignment except spades can be installed using:
@@ -87,7 +90,7 @@ $ mamba install samtools bowtie bwa mummer4 jellyfish fastqc fastx_toolkit
 ```
 
 For spades, download the precompiled version from here (installing with conda is tricky because there are conflicts in the dependencies):
-[https://cab.spbu.ru/files/release3.15.4/manual.html#sec2](https://cab.spbu.ru/files/release3.15.4/manual.html#sec2)
+[[https://cab.spbu.ru/files/release3.15.4/manual.html#sec2]](https://github.com/ablab/spades/releases/tag/v4.0.0)
 
 
 #### [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) - Raw read quality assessment
